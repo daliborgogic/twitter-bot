@@ -18,7 +18,7 @@ function followed (event) {
 
 // function definition to tweet back to user who followed
 function tweetNow (tweetTxt) {
-  var tweet = {
+  let tweet = {
     status: tweetTxt
   }
   Twitter.post('statuses/update', tweet, (err, data, response) => {
