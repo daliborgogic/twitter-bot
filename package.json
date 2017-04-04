@@ -1,0 +1,16 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production PORT=8080 node -r dotenv/config bot.js"
+  },
+  "author": "Dalibor Gogic <mail@daliborgogic.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cross-env": "^4.0.0",
+    "dotenv": "^4.0.0",
+    "twit": "^2.2.5"
+  }
+}
