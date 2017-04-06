@@ -9,7 +9,7 @@ const stream = Twitter.stream('user')
 // when someone follows
 stream.on('follow', followed)
 
-let txts = [
+const txts = [
   'Thank you for the follow up. High five!', 
   'Thanks for connecting', 
   'Thank for connect with me', 
