@@ -9,11 +9,29 @@ const stream = Twitter.stream('user')
 // when someone follows
 stream.on('follow', followed)
 
+const quotes = [
+  'Thank you for the follow up. High five!', 
+  'Thanks for connecting', 
+  'Thank for connect with me', 
+  'Welcome my new follower', 
+  'So, how did you get here?'
+]
+
+function rand(xs) {
+  return xs.slice(0).sort(function () {
+    return .5 - Math.random()
+  })
+}
+
+function txt(q) {
+  return q[0]
+}
+
 // trigger the callback
 function followed (event) {
   console.log('Follow Event is running')
   let screenName = event.source.screen_name
-  tweetNow(`.@${screenName} Thank you for the follow up. High five! #bot`)
+  tweetNow(`.@${screenName} ${rand(txts).map(txt)[0]} #bot`)
 }
 
 // function definition to tweet back to user who followed
