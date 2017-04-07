@@ -12,7 +12,7 @@ stream.on('follow', followed)
 const txts = [
   'Thank you for the follow up. High five!', 
   'Thanks for connecting', 
-  'Thank for connect with me', 
+  'Thanks for connect with me', 
   'Welcome my new follower', 
   'So, how did you get here?'
 ]
