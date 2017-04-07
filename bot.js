@@ -22,7 +22,9 @@ function followed (event) {
   let randomTxts = Math.floor(Math.random() * (txts.length))
   console.log('Follow Event is running')
   let screenName = event.source.screen_name
-  tweetNow(`.@${screenName} ${txts[randomTxts]} #bot`)
+  if (screenName != process.env.SCREEN_NAME) {
+    tweetNow(`.@${screenName} ${txts[randomTxts]} #bot`)
+  }
 }
 
 // function definition to tweet back to user who followed
