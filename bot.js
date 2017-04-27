@@ -40,3 +40,36 @@ function tweetNow (tweetTxt) {
     }
   })
 }
+
+const retweet = () => {  
+  let params = {
+    q: '#nodejs, #Nodejs',  
+    result_type: 'popular',
+    lang: 'en'
+  }
+
+  // more parameters https://dev.twitter.com/rest/reference/get/search/tweets
+  Twitter.get('search/tweets', params, (err, data) => {
+    if (!err) {
+      let retweetId = data.statuses[0].id_str
+      Twitter.post('statuses/retweet/:id', {
+        id: retweetId
+      }, (err, res) => {
+        if (res) {
+          console.log('Retweeted!!!')
+        }
+        if (err) {
+          console.error('Something went wrong while RETWEETING... Duplication maybe...')
+        }
+      })
+    } else {
+      console.error('Something went wrong while SEARCHING...')
+    }
+  })
+}
+
+// grab & retweet as soon as program is running...
+retweet()
+
+// retweet in every 6h
+setInterval(retweet, 1000 * 60 * 60 * 6 )
