@@ -2,4 +2,4 @@
 
 > Tweet back to any Twitter user who follows you
 
-> Retweet 
+> Retweet one popular every 6h
